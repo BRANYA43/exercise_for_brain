@@ -1,12 +1,20 @@
 from tabulate import tabulate
 
+
+def get_number_input(message: str) -> int:
+    ret = ''
+    while not ret.isdigit():
+        ret = input(message)
+    return int(ret)
+
+
 move_left = False
 move_right = True
 move_up = False
 move_down = False
 
-rows = 13
-columns = 8
+rows = get_number_input('Введіть кіл-ть строк: ')
+columns = get_number_input('Введіть кіл-ть стовпчиків: ')
 steps = rows * columns
 matrix = [[0 for j in range(columns)] for i in range(rows)]
 
